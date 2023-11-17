@@ -73,6 +73,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
     else:
         charset = alphabet
         random.shuffle(charset)
+        password = random.choice(alphabet)
         password.join(charset[:length - 1])
 
 
