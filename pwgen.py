@@ -49,7 +49,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
         charset = alphabet + specials + digits
         random.shuffle(charset)
 
-        password = (
+        password = ( # ensures that password contains at least one of each type of char
         random.choice(alphabet) +
         random.choice(digits) +
         random.choice(specials)
@@ -59,7 +59,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
         charset = alphabet + specials
         random.shuffle(charset)
 
-        password = (
+        password = ( # ensures that password contains at least one of each type of char
         random.choice(alphabet) +
         random.choice(specials)
         )
@@ -68,7 +68,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
         charset = alphabet + digits
         random.shuffle(charset)
 
-        password = (
+        password = ( # ensures that password contains at least one of each type of char
         random.choice(alphabet) +
         random.choice(digits) 
         )

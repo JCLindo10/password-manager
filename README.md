@@ -12,4 +12,4 @@ Planned features:
     - Customizable password generation (length, types of characters, etc.)
     - Beautiful GUI
 
-This project will not only exercise algorithmic thinking, but cryptography, authentication and security, UI design, and databasing, among other possibilities.
+This project will not only exercise algorithmic thinking, but cryptography, authentication and security, and UI design, among other possibilities.
