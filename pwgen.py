@@ -9,7 +9,10 @@ Code for basic password generation
 
 """
 
-def gen(params: str) -> str:
+import string
+import random
+
+def gen(params: char) -> str:
 
 
 
