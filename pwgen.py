@@ -54,7 +54,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
         random.choice(digits) +
         random.choice(specials)
         )
-        password.join(charset[:length - 3])
+        password = password + ''.join(random.choice(charset) for _ in range(length - 3))
     elif special_chars and not numbers:
         charset = alphabet + specials
         random.shuffle(charset)
@@ -63,7 +63,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
         random.choice(alphabet) +
         random.choice(specials)
         )
-        password.join(charset[:length - 2])
+        password = password + ''.join(random.choice(charset) for _ in range(length - 2))
     elif not special_chars and numbers:
         charset = alphabet + digits
         random.shuffle(charset)
@@ -72,12 +72,12 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
         random.choice(alphabet) +
         random.choice(digits) 
         )
-        password.join(charset[:length - 2])
+        password = password + ''.join(random.choice(charset) for _ in range(length - 2))
     else:
         charset = alphabet
         random.shuffle(charset)
         password = random.choice(alphabet)
-        password.join(charset[:length])
+        password = password + ''.join(random.choice(charset) for _ in range(length - 1))
 
 
     return password
