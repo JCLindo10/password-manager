@@ -9,7 +9,9 @@ Code for basic password generation
 
 """
 
-def gen(prams: str) -> str:
+def gen(params: str) -> str:
+
+
 
     return ""
 
