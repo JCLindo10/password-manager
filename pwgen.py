@@ -11,7 +11,19 @@ Code for basic password generation
 
 import string
 import random
+alphabet = list(string.ascii_lowercase + string.ascii_uppercase)
+specials = list(string.punctuation)
+digits = list(string.digits)
+charset = []
 
+def pw_has_required_complexity(pw: str, special_chars: bool, numbers: bool) -> bool:
+    if special_chars and digits:
+        return any(char in specials + numbers for char in pw)
+    if special_chars and not digits:
+        return any(char in specials for char in pw)
+    if not special_chars and digits:
+        return any(char in digits for char in pw)
+    return True # pw only has letters
 
 def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
     '''
@@ -27,23 +39,41 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
 
     '''
 
-    alphabet = list(string.ascii_lowercase + string.ascii_uppercase)
-    specials = list(string.punctuation)
-    numbers = list(string.digits)
-    charset = []
+    password = ''
+
 
     if special_chars and numbers:
-        charset = alphabet + specials + numbers
+        charset = alphabet + specials + digits
+        random.shuffle(charset)
+
+        password = (
+        random.choice(alphabet) +
+        random.choice(digits) +
+        random.choice(specials)
+        )
+        password.join(charset[:length - 3])
     elif special_chars and not numbers:
         charset = alphabet + specials
+        random.shuffle(charset)
+
+        password = (
+        random.choice(alphabet) +
+        random.choice(specials)
+        )
+        password.join(charset[:length - 2])
     elif not special_chars and numbers:
-        charset = alphabet + numbers
+        charset = alphabet + digits
+        random.shuffle(charset)
+
+        password = (
+        random.choice(alphabet) +
+        random.choice(digits) 
+        )
+        password.join(charset[:length - 2])
     else:
         charset = alphabet
-
-    random.shuffle(charset)
-
-    password = ''.join(charset[:length])
+        random.shuffle(charset)
+        password.join(charset[:length - 1])
 
     return password
 
