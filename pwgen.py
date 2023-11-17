@@ -12,7 +12,8 @@ Code for basic password generation
 import string
 import random
 
-def gen(params: char) -> str:
+
+def gen(length: int, special_chars: bool, numbers: bool) -> str:
 
 
 
