@@ -26,7 +26,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
             password (str): password 
 
     '''
-    password = [""] * length
+
     alphabet = list(string.ascii_lowercase + string.ascii_uppercase)
     specials = list(string.punctuation)
     numbers = list(string.digits)
@@ -43,7 +43,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
 
     random.shuffle(charset)
 
-    password = charset[:length]
+    password = ''.join(charset[:length])
 
-    return str(password)
+    return password
 
