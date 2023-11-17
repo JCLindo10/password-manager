@@ -33,13 +33,15 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
     charset = []
 
     if special_chars and numbers:
-        charset = random.shuffle(alphabet + specials + numbers)
+        charset = alphabet + specials + numbers
     elif special_chars and not numbers:
-        charset = random.shuffle(alphabet + specials)
+        charset = alphabet + specials
     elif not special_chars and numbers:
-        charset = random.shuffle(alphabet + numbers)
+        charset = alphabet + numbers
     else:
-        charset = random.shuffle(alphabet)
+        charset = alphabet
+
+    random.shuffle(charset)
 
     password = charset[:length]
 
