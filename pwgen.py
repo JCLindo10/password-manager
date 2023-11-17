@@ -26,8 +26,13 @@ def gen(length: int, special_chars: bool, numbers: bool) -> str:
             password (str): password 
 
     '''
-    password = ""
+    password = [""] * length
+    alphabet = list(string.ascii_lowercase + string.ascii_uppercase)
+    specials = list(string.punctuation)
+    numbers = list(string.digits)
 
+    
+    
 
-    return password
+    return str(password)
 
