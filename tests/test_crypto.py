@@ -1,7 +1,7 @@
 import unittest
 import pwcrypto
 
-class Test_Password_Generation(unittest.TestCase):
+class Test_Password_Cryptography(unittest.TestCase):
     pass
     
 if __name__ == "__main__":
