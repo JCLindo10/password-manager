@@ -14,8 +14,20 @@ import random
 
 
 def gen(length: int, special_chars: bool, numbers: bool) -> str:
+    '''
+    Returns a randomly generated password
+
+        Parameters:
+            length (int): Desired length of the password
+            special_chars (bool): Choice of including special characters
+            numbers (bool): Choice of including numbers
+
+        Returns:
+            password (str): password 
+
+    '''
+    password = ""
 
 
-
-    return ""
+    return password
 
