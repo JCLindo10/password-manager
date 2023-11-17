@@ -13,7 +13,7 @@ import string
 import random
 
 
-def gen(length: int, special_chars: bool, numbers: bool) -> str:
+def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
     '''
     Returns a randomly generated password
 
@@ -30,9 +30,18 @@ def gen(length: int, special_chars: bool, numbers: bool) -> str:
     alphabet = list(string.ascii_lowercase + string.ascii_uppercase)
     specials = list(string.punctuation)
     numbers = list(string.digits)
+    charset = []
 
-    
-    
+    if special_chars and numbers:
+        charset = random.shuffle(alphabet + specials + numbers)
+    elif special_chars and not numbers:
+        charset = random.shuffle(alphabet + specials)
+    elif not special_chars and numbers:
+        charset = random.shuffle(alphabet + numbers)
+    else:
+        charset = random.shuffle(alphabet)
+
+    password = charset[:length]
 
     return str(password)
 
