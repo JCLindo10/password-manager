@@ -39,6 +39,9 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
 
     '''
 
+    if length == 0:
+        return ''
+
     password = ''
 
 
@@ -74,8 +77,10 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
         charset = alphabet
         random.shuffle(charset)
         password = random.choice(alphabet)
-        password.join(charset[:length - 1])
+        password.join(charset[:length])
 
 
     return password
 
+if __name__ == "__main__":
+    print(gen(0))
