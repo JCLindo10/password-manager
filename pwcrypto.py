@@ -6,7 +6,7 @@ Author(s):
 
 """
 
-def encrypt(plaintext: str) -> str:
+def encrypt(plaintext: str, salting: bool=False) -> str:
     # Useful code goes here
 
     return ''
