@@ -11,7 +11,7 @@ class Test_Password_Cryptography(unittest.TestCase):
         self.password123 = "password123"
 
     def test_password123(self):
-        expected_hash = hashlib.sha256(self.password123.encode()).hexdigest()
+        expected_hash = hashlib.sha256("password123".encode()).hexdigest()
         actual_hash = pwcrypto.encrypt("password123")
 
         self.assertEqual(expected_hash, actual_hash)
