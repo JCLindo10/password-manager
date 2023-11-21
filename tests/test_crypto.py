@@ -28,6 +28,12 @@ class Test_Password_Cryptography(unittest.TestCase):
 
         self.assertEqual(expected_hash, actual_hash)
 
+    def test_long_string(self):
+        expected_hash = hashlib.sha256("This is a really long string that has been made in order to test the encryption of really long strings in the password manager project being implemented by Lee Ramey, Nick House, and Jake Lindo".encode()).hexdigest()
+        actual_hash = pwcrypto.encrypt("This is a really long string that has been made in order to test the encryption of really long strings in the password manager project being implemented by Lee Ramey, Nick House, and Jake Lindo")
+
+        self.assertEqual(expected_hash, actual_hash)
+
     
 if __name__ == "__main__":
     unittest.main() 
