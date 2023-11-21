@@ -34,6 +34,14 @@ class Test_Password_Cryptography(unittest.TestCase):
 
         self.assertEqual(expected_hash, actual_hash)
 
+    def test_double_hash(self):
+        pre_expected_hash = hashlib.sha256("Hello, World!".encode()).hexdigest()
+        expected_hash = hashlib.sha256(pre_expected_hash.encode()).hexdigest()
+        pre_actual_hash = pwcrypto.encrypt("Hello, World!")
+        actual_hash = pwcrypto.encrypt(pre_actual_hash)
+
+        self.assertEqual(expected_hash, actual_hash)
+
     
 if __name__ == "__main__":
     unittest.main() 
