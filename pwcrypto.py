@@ -1,7 +1,7 @@
 """
 pwcrypto.py
 Created: November 17 2023
-Author(s):
+Author(s): Lee Ramey and Jake Lindo
 
 
 """
