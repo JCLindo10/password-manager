@@ -17,7 +17,10 @@ class Test_Password_Cryptography(unittest.TestCase):
         self.assertEqual(expected_hash, actual_hash)
 
     def test_abcdefghijklmnopqrstuvwxyz_sha256_hash(self):
-        self.assertEqual(self.abcdefghijklmnopqrstuvwxyz_sha256_hash, pwcrypto.encrypt("abcdefghijklmnopqrstuvwxyz"))
+        expected_hash = hashlib.sha256("abcdefghijklmnopqrstuvwxyz".encode()).hexdigest()
+        actual_hash = pwcrypto.encrypt("abcdefghijklmnopqrstuvwxyz")
+
+        self.assertEqual(expected_hash, actual_hash)
 
     def test_Password1Exclamation(self):
         self.assertEqual(self.Password1Exclamation_sha256_hash, pwcrypto.encrypt("Password1!"))
