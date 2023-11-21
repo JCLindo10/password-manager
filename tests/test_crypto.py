@@ -22,6 +22,12 @@ class Test_Password_Cryptography(unittest.TestCase):
 
         self.assertEqual(expected_hash, actual_hash)
 
+    def test_empty_string(self):
+        expected_hash = hashlib.sha256("".encode()).hexdigest()
+        actual_hash = pwcrypto.encrypt("")
+
+        self.assertEqual(expected_hash, actual_hash)
+
     
 if __name__ == "__main__":
     unittest.main() 
