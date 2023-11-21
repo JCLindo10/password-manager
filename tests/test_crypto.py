@@ -10,7 +10,7 @@ class Test_Password_Cryptography(unittest.TestCase):
     def test_password123(self):
         self.assertEqual(self.password123_sha256_hash, pwcrypto.encrypt("password123"))
 
-    def test_abcdefghijklmnopqrstuvwxyz_sha256_hash:
+    def test_abcdefghijklmnopqrstuvwxyz_sha256_hash(self):
         self.assertEqual(self.abcdefghijklmnopqrstuvwxyz_sha256_hash, pwcrypto.encrypt("abcdefghijklmnopqrstuvwxyz"))
 
     
