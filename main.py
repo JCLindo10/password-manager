@@ -33,10 +33,6 @@ parser.add_option("-d", "--numerics",
 def main():
     options, args = parser.parse_args()
 
-    print(options, args)
-    options_dict = vars(options)
-    print(options_dict)
-
     password = pwgen.gen(options.password_length, special_chars=options.special_chars, numbers=options.numerical_chars)
         
     print(password)
