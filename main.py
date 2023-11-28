@@ -37,8 +37,8 @@ def main():
     print(options_dict)
 
     password = ''
-    specials = False
-    numbers = False
+    specials = options.special_chars
+    numbers = options.numerical_chars
     length = 0
 
     if len(options_dict.keys()) == 0:
@@ -47,7 +47,7 @@ def main():
     if 'password_length' in options_dict.keys():
         length = options_dict['password_length']
         
-    print(password)
+    print(password, specials, numbers)
 
 
 if __name__ == "__main__":
