@@ -37,19 +37,9 @@ def main():
     options_dict = vars(options)
     print(options_dict)
 
-    password = ''
-    specials = options.special_chars
-    numbers = options.numerical_chars
-    length = 0
-
-    if len(options_dict.keys()) == 0:
-        password = pwgen.gen()
-    
-    if 'password_length' in options_dict.keys():
-        length = options_dict['password_length']
+    password = pwgen.gen(options.password_length, options.special_chars, options.numerical_chars)
         
-    print(password, specials, numbers)
-
+    print(password)
 
 if __name__ == "__main__":
     main()
