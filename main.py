@@ -10,6 +10,7 @@ Main driver program
 """
 
 from optparse import OptionParser
+import pwgen
 
 parser = OptionParser()
 parser.add_option("-n", "--num_chars", 
@@ -30,6 +31,8 @@ def main():
     options, args = parser.parse_args()
 
     print(options, args)
+
+
 
 
 if __name__ == "__main__":
