@@ -31,8 +31,21 @@ def main():
     options, args = parser.parse_args()
 
     print(options, args)
+    options_dict = vars(options)
+    print(options_dict)
 
+    password = ''
+    specials = False
+    numbers = False
+    length = 0
 
+    if len(options_dict.keys()) == 0:
+        password = pwgen.gen()
+    
+    if 'password_length' in options_dict.keys():
+        length = options_dict['password_length']
+        
+    print(password)
 
 
 if __name__ == "__main__":
