@@ -21,10 +21,12 @@ parser.add_option("-n", "--num_chars",
 parser.add_option("-s", "--special_chars",
                     action="store_true", 
                     dest="special_chars",
+                    default=False,
                     help="Boolean denoting the usage of special characters")
 parser.add_option("-d", "--numerics",
                     action="store_true",
                     dest="numerical_chars",
+                    default=False,
                     help="Boolean denoting the usage of numbers")
 
 def main():
