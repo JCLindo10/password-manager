@@ -17,7 +17,9 @@ parser.add_option("-s", "--special_chars", action="store_true", dest="special_ch
 parser.add_option("-d", "--numerics", action="store_true", dest="numerical_chars")
 
 def main():
-    pass
+    options, args = parser.parse_args()
+
+    print(options, args)
 
 
 if __name__ == "__main__":
