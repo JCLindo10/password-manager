@@ -9,7 +9,10 @@ Main driver program
 
 """
 
-from optparse include OptionParser
+from optparse import OptionParser
+
+parser = OptionParser()
+parser.add_option("-n", "--n_chars", action="store", type="int", dest="password_length")
 
 def main():
     pass
