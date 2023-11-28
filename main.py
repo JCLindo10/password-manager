@@ -37,7 +37,7 @@ def main():
     options_dict = vars(options)
     print(options_dict)
 
-    password = pwgen.gen(options.password_length, options.special_chars, options.numerical_chars)
+    password = pwgen.gen(options.password_length, special_chars=options.special_chars, numbers=options.numerical_chars)
         
     print(password)
 
