@@ -18,7 +18,7 @@ parser.add_option("-n", "--num_chars",
                     type="int", 
                     dest="password_length",
                     default=0,
-                    help="The length of the desired password")
+                    help="The length of the desired password (must be 7 characters or longer)")
 parser.add_option("-s", "--special_chars",
                     action="store_true", 
                     dest="special_chars",

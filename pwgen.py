@@ -39,7 +39,7 @@ def gen(length: int, special_chars: bool = False, numbers: bool = False) -> str:
 
     '''
 
-    if length == 0:
+    if length < 7:
         return ''
 
     password = ''
